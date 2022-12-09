@@ -5,6 +5,7 @@ final: prev: {
 
   spectrum-live = prev.spectrum-live.overrideAttrs (old: {
     KERNEL = final.linux_imx8;
+    pname = "build/live.img";
     installPhase = ''
       runHook preInstall
       dd if=/dev/zero bs=1M count=6 >> $pname
