@@ -9,4 +9,6 @@ final: prev: {
     spectrum-live = prev.spectrum-live.overrideAttrs (old: {
         ROOT_FS = final.spectrum-rootfs;
     });
+
+    protobuf = final.callPackage ./packages/protobuf {inherit (prev) protobuf; };
 }
